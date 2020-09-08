@@ -154,6 +154,10 @@ func (l *Logger) SetPrefix(newPrefix string) {
 	l.log = opts.context.Logger()
 }
 
+func (l *Logger) SetZeroLogger(logger zerolog.Logger) {
+	l.log = logger
+}
+
 func (l Logger) Clone(setters ...Setter) *Logger {
 	s := append(l.setters, setters...)
 
